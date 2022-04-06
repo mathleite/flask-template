@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: flask-app
     working_dir: /tmp/flask-app
-    command: flask run --host=0.0.0.0
+    command: flask run --host=0.0.0.0 --eager-loading
     environment:
       FLASK_ENV: "development"
     volumes:
