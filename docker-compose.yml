@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flask-app
+    working_dir: /tmp/flask-app
+    command: flask run --host=0.0.0.0
+    environment:
+      FLASK_ENV: "development"
+    volumes:
+      - type: bind
+        source: "./app"
+        target: "/tmp/flask-app"
+    ports:
+      - "5001:5000"
